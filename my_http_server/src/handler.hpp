@@ -6,6 +6,7 @@
 #include <sstream>
 
 std::string handleRequest(const std::string &request);
+std::string handleCustomRequest();
 std::string handleGetRequest(const std::string &path);
 std::string handleHeadRequest(const std::string &path);
 std::string handlePostRequest(const std::string &path, std::istringstream &requestStream);

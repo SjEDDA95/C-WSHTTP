@@ -57,6 +57,31 @@ std::string handleRequest(const std::string &request)
     std::unordered_map<std::string, std::string> headers = parseHeaders(requestStream);
 
     std::cout << "Requête reçue: " << method << " " << path << " " << httpVersion << std::endl;
+    // requête custom avec retour de hello world : curl -X GET  http://localhost:8080/custom
+    // CRUD FOR CUSTOM PATH
+    if (path == "/custom")
+    {
+        if (method == "GET")
+        {
+            return handleCustomRequest();
+        }
+        else if (method == "HEAD") // todo not implemented yet handleCustomHeadRequest
+        {
+            return handleCustomRequest();
+        }
+        else if (method == "POST") // todo not implemented yet handleCustomPostRequest
+        {
+            return handleCustomRequest();
+        }
+        else if (method == "PUT") // todo not implemented yet handleCustomPutRequest
+        {
+            return handleCustomRequest();
+        }
+        else if (method == "DELETE") // todo not implemented yet handleCustomDeleteRequest
+        {
+            return handleCustomRequest();
+        }
+    }
 
     if (method == "GET")
     {
@@ -82,6 +107,16 @@ std::string handleRequest(const std::string &request)
     {
         return "HTTP/1.1 501 Not Implemented\r\n\r\n";
     }
+}
+
+std::string handleCustomRequest()
+{
+    // Retour Hello World ou bien un appel a une fonction externe custom(path)
+    std::cout << "Hello World " << std::endl;
+    std::string response = "HTTP/1.1 200 OK\r\n";
+    response += "\r\n";
+
+    return response;
 }
 
 std::string handleGetRequest(const std::string &path)

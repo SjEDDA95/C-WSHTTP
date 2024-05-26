@@ -9,3 +9,5 @@
 
 
 # First commit : Inclusion of boilerplate type code for my C++ webserver
+
+# List des éléments implémentés
