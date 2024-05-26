@@ -3,6 +3,7 @@
 
 #include <string>
 
-void handleRequest(const std::string &request);
+std::string handleRequest(const std::string &request);
+std::string handleGetRequest(const std::string &path);
 
 #endif // HANDLER_HPP

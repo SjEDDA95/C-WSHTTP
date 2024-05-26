@@ -11,6 +11,7 @@ public:
 
 private:
     void loadConfig(const std::string &configFilePath);
+    void handleClient(int clientSocket);
 
     std::string host;
     int port;
