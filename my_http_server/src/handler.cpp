@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <unordered_map>
 #include <string>
 
 std::string handleRequest(const std::string &request)
@@ -50,4 +51,45 @@ std::string handleGetRequest(const std::string &path)
     response += fileContent;
 
     return response;
+}
+
+std::unordered_map<std::string, std::string> parseHeaders(std::istringstream &requestStream)
+{
+    std::unordered_map<std::string, std::string> headers;
+    std::string line;
+
+    while (std::getline(requestStream, line) && line != "\r")
+    {
+        std::size_t colon = line.find(':');
+        if (colon != std::string::npos)
+        {
+            std::string name = line.substr(0, colon);
+            std::string value = line.substr(colon + 2); // Skip ": "
+            headers[name] = value;
+        }
+    }
+
+    return headers;
+}
+
+// Fonction pour obtenir le type MIME en fonction de l'extension de fichier
+std::string getMimeType(const std::string &path)
+{
+    std::unordered_map<std::string, std::string> mimeTypes = {
+        {".html", "text/html"},
+        {".css", "text/css"},
+        {".js", "application/javascript"},
+        {".json", "application/json"},
+        {".jpg", "image/jpeg"},
+        {".jpeg", "image/jpeg"},
+        {".png", "image/png"},
+        // Ajoutez d'autres types MIME si nécessaire
+    };
+
+    std::string extension = path.substr(path.find_last_of("."));
+    if (mimeTypes.find(extension) != mimeTypes.end())
+    {
+        return mimeTypes[extension];
+    }
+    return "text/plain";
 }
