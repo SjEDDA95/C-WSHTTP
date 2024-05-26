@@ -13,13 +13,11 @@
 
 Server::Server(const std::string &configFilePath)
 {
-    // Charger la configuration depuis le fichier JSON
     loadConfig(configFilePath);
 }
 
 void Server::start()
 {
-    // Initialiser le socket
     int server_fd, new_socket;
     struct sockaddr_in address;
     int opt = 1;
@@ -69,6 +67,8 @@ void Server::start()
             continue;
         }
 
+        std::cout << "Nouvelle connexion acceptée" << std::endl;
+
         // Gérer chaque connexion dans un thread séparé
         std::thread(&Server::handleClient, this, new_socket).detach();
     }
@@ -76,7 +76,6 @@ void Server::start()
 
 void Server::loadConfig(const std::string &configFilePath)
 {
-    // Charger la configuration depuis un fichier JSON (implémentation simple)
     std::ifstream configFile(configFilePath);
     if (!configFile.is_open())
     {
@@ -84,7 +83,6 @@ void Server::loadConfig(const std::string &configFilePath)
     }
 
     // Parsing JSON (simplifié)
-    // Vous pouvez utiliser une bibliothèque JSON pour C++ pour une implémentation plus robuste
     host = "0.0.0.0";
     port = 8080;
     rootDir = "static";

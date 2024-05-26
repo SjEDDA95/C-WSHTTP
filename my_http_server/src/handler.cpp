@@ -15,6 +15,8 @@ std::string handleRequest(const std::string &request)
 
     requestStream >> method >> path >> httpVersion;
 
+    std::cout << "Requête reçue: " << method << " " << path << " " << httpVersion << std::endl;
+
     // Logique de traitement de la requête en fonction de la méthode
     if (method == "GET")
     {
@@ -28,8 +30,12 @@ std::string handleRequest(const std::string &request)
 
 std::string handleGetRequest(const std::string &path)
 {
-    // Serveur de fichiers statiques
-    std::string fullPath = "static" + path;
+    // Vérifier si le chemin est la racine
+    std::string relativePath = path == "/" ? "/index.html" : path;
+    std::string fullPath = "../static" + relativePath; // Chemin relatif à partir du répertoire de build
+
+    std::cout << "Chemin complet: " << fullPath << std::endl;
+
     std::string fileContent = readFile(fullPath);
 
     if (fileContent.empty())
