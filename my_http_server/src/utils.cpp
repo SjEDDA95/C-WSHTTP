@@ -15,3 +15,14 @@ std::string readFile(const std::string &filePath)
     buffer << file.rdbuf();
     return buffer.str();
 }
+
+void logRequest(const std::string &request)
+{
+    std::ofstream logFile("../logs/server.log", std::ios_base::app); // Chemin relatif au répertoire de build
+    if (!logFile.is_open())
+    {
+        std::cerr << "Impossible d'ouvrir le fichier de log: ../logs/server.log" << std::endl;
+        return;
+    }
+    logFile << request << std::endl;
+}
