@@ -55,7 +55,7 @@ Garnir le CMakeLists
 
 # Todo next steps
 
-- [/] Revoir le code avec Karim
+- [x] Revoir le code avec Karim
 - [ ] Revoir toutes les fonctions avec CHATGPT
 - [ ] Essaye de refaire les handler.hpp et handler.cpp avec le main.cpp
 - [ ] Implémenter un test unitaire sur une requête
