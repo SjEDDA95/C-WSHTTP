@@ -56,7 +56,5 @@ Garnir le CMakeLists
 # Todo next steps
 
 - [x] Comprendre comme il faut les sockets - le protocole TCP - et ce qu'est un webserver HTTP
-- [ ] Revoir toutes les fonctions avec CHATGPT
 - [ ] Revoir structure de projet (CMakeLists - dossier de tests - dossier pour serve - et src)
-- [ ] Essaye de refaire les handler.hpp et handler.cpp avec le main.cpp
 - [ ] Implémenter un test unitaire sur une requête
