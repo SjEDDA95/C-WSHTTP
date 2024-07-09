@@ -88,7 +88,9 @@ curl -X GET http://localhost:8080/style.css
 # Todo next steps (implémentations manquantes)
 
 - [x] Comprendre comme il faut les sockets - le protocole TCP - et ce qu'est un webserver HTTP
+
 - [x] Revoir structure de projet (CMakeLists - dossier de tests - dossier pour serve - et src)
+
 - [ ] Implémenter un test unitaire sur une requête
 
 - [ ] Gestion des requêtes invalides ou incomplètes
