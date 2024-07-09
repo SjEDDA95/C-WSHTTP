@@ -85,9 +85,27 @@ curl -X GET http://localhost:8080/
 curl -X GET http://localhost:8080/style.css
 
 
-# Todo next steps
+# Todo next steps (implémentations manquantes)
 
 - [x] Comprendre comme il faut les sockets - le protocole TCP - et ce qu'est un webserver HTTP
-- [ ] Revoir structure de projet (CMakeLists - dossier de tests - dossier pour serve - et src)
+- [x] Revoir structure de projet (CMakeLists - dossier de tests - dossier pour serve - et src)
 - [ ] Implémenter un test unitaire sur une requête
+
+- [ ] Gestion des requêtes invalides ou incomplètes
+Assurez-vous que le serveur renvoie des réponses HTTP appropriées pour les requêtes invalides, telles que `400 Bad Request`.
+
+- [ ] Listage du contenu d'un dossier
+Implémentez une fonctionnalité permettant de lister le contenu d'un répertoire. Cette fonctionnalité peut être ajoutée à la méthode `handleGetRequest`.
+
+- [ ] Démonstration des fonctionnalités CRUD
+Implémentez et testez les fonctionnalités CRUD pour certaines URL spécifiques. Assurez-vous que ces fonctionnalités sont opérationnelles et bien testées.
+
+- [ ] Réduction du temps de réponse pour les requêtes récurrentes
+Ajoutez des mécanismes de mise en cache pour améliorer les performances des requêtes récurrentes.
+
+- [ ] Optimisation des opérations I/O
+Utilisez des techniques d'I/O non bloquantes et/ou des pools de threads pour améliorer les performances des opérations I/O.
+
+- [ ] Conformité à la spécification HTTP/1.1
+Vérifiez que le parsing des headers et la génération des réponses sont conformes à la spécification HTTP/1.1 (RFC2616).
 
