@@ -53,8 +53,33 @@ Garnir le CMakeLists
 
 
 
+# Récap des requetes testées et testables 
+
+- **# Requête GET**
+curl -X GET http://localhost:8080/custom
+
+- **# Requête POST**
+curl -X POST http://localhost:8080/custom -d "name=value"
+
+- **# Requête PUT**
+curl -X PUT http://localhost:8080/custom -d "name=value"
+
+- **# Requête DELETE**
+curl -X DELETE http://localhost:8080/custom
+
+- **# Requête HEAD**
+curl -I http://localhost:8080/custom
+
+- **# Requête GET pour un fichier statique**
+curl -X GET http://localhost:8080/
+
+- **# Requête GET pour un autre fichier statique**
+curl -X GET http://localhost:8080/style.css
+
+
 # Todo next steps
 
 - [x] Comprendre comme il faut les sockets - le protocole TCP - et ce qu'est un webserver HTTP
 - [ ] Revoir structure de projet (CMakeLists - dossier de tests - dossier pour serve - et src)
 - [ ] Implémenter un test unitaire sur une requête
+
