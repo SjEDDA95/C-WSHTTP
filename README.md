@@ -58,6 +58,7 @@ Garnir le CMakeLists
 - cmake ..
 - make
 - ./my_http_server
+- ==> http://localhost:8080
 
 
 # Récap des requetes testées et testables 
