@@ -51,6 +51,13 @@ Todo : HEAD, POST, DELETE, PUT ==> Donc pour chaque, une méthode spécifique
 
 Garnir le CMakeLists
 
+# Pour lancer le projet <==>
+
+- mkdir build
+- cd build
+- cmake ..
+- make
+- ./my_http_server
 
 
 # Récap des requetes testées et testables 
